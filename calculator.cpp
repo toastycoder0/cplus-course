@@ -1,31 +1,30 @@
-#include <exception>
 #include <iostream>
-#include <string>
+#include <ostream>
+
+using namespace std;
 
 int main() {
-  std::string inputMessage = "Insert your table number: ";
-  std::string errorMessage = "Invalid number. Please try again.\n";
-  double tableNumber;
-  std::string lineInput;
+  float tableNumber;
 
   while (true) {
-    std::cout << inputMessage;
-    std::getline(std::cin, lineInput);
+    cout << "Ingresa el numero de tabla: ";
+    cin >> tableNumber;
 
-    try {
-      tableNumber = std::stod(lineInput);
-      break;
-    } catch (const std::exception &e) {
-      std::cout << errorMessage;
+    if (cin.fail() > 0) {
+      cout << "El valor esta mal 😔, Ingresa un número valido.\n";
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
       continue;
     }
+
+    break;
   }
 
-  std::cout << "\n--- Multiplication Table for " << tableNumber << " ---\n";
+  cout << "\n--- Tabla del " << tableNumber << " --- \n\n";
 
   for (int multiplier = 1; multiplier < 11; multiplier++) {
-    double result = tableNumber * multiplier;
-    std::cout << multiplier << " x " << tableNumber << " = " << result << "\n";
+    float result = tableNumber * multiplier;
+    cout << tableNumber << " x " << multiplier << " = " << result << "\n";
   }
 
   return 0;
