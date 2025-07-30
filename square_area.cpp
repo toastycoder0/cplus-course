@@ -4,7 +4,7 @@ int main() {
   double squareSide;
 
   while (true) {
-    std::cout << "Enter the length of one of the square sides (m2): ";
+    std::cout << "Enter the length of one of the square sides (on meters): ";
     std::cin >> squareSide;
 
     if (std::cin.fail()) {
