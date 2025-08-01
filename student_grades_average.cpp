@@ -14,7 +14,7 @@ int main() {
   cout << "Nombre del alumno: ";
   getline(cin, studentName);
 
-  for (auto gradeName : GRADES_NAMES) {
+  for (string gradeName : GRADES_NAMES) {
     float inputGrade;
 
     while (true) {
