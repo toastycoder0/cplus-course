@@ -11,11 +11,12 @@ int main() {
   cout << "Ingresa el nombre del alumno: ";
   getline(cin, studentName);
 
-  for (int i = 0; i < GRADES_TO_READ; i++) {
+  for (int gradeToInsert = 0; gradeToInsert < GRADES_TO_READ; gradeToInsert++) {
     float inputGrade;
 
     while (true) {
-      cout << "Ingresa el valor de la calificación " << i + 1 << ": ";
+      cout << "Ingresa el valor de la calificación " << gradeToInsert + 1
+           << ": ";
       cin >> inputGrade;
 
       if (cin.fail()) {
