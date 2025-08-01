@@ -4,7 +4,6 @@
 using namespace std;
 
 int main() {
-  const int GRADES_TO_READ = 7;
   float studentGradesTotal = 0;
   string studentName;
 
@@ -15,12 +14,11 @@ int main() {
   cout << "Nombre del alumno: ";
   getline(cin, studentName);
 
-  for (int gradeToInsert = 0; gradeToInsert < GRADES_TO_READ; gradeToInsert++) {
+  for (auto gradeName : GRADES_NAMES) {
     float inputGrade;
 
     while (true) {
-      cout << "Ingresa el valor de la calificación de "
-           << GRADES_NAMES[gradeToInsert] << ": ";
+      cout << "Ingresa el valor de la calificación de " << gradeName << ": ";
       cin >> inputGrade;
 
       if (cin.fail()) {
@@ -35,7 +33,7 @@ int main() {
     }
   }
 
-  float gradeAverage = studentGradesTotal / GRADES_TO_READ;
+  float gradeAverage = studentGradesTotal / GRADES_NAMES.size();
 
   cout << "El promedio de " << studentName << " es de " << gradeAverage << "\n";
 
