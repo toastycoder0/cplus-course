@@ -8,15 +8,19 @@ int main() {
   float studentGradesTotal = 0;
   string studentName;
 
-  cout << "Ingresa el nombre del alumno: ";
+  vector<string> GRADES_NAMES = {"Español",  "Matematicas", "Física",
+                                 "Química",  "Algorítmos",  "Lógica",
+                                 "Historia", "Química"};
+
+  cout << "Nombre del alumno: ";
   getline(cin, studentName);
 
   for (int gradeToInsert = 0; gradeToInsert < GRADES_TO_READ; gradeToInsert++) {
     float inputGrade;
 
     while (true) {
-      cout << "Ingresa el valor de la calificación " << gradeToInsert + 1
-           << ": ";
+      cout << "Ingresa el valor de la calificación de "
+           << GRADES_NAMES[gradeToInsert] << ": ";
       cin >> inputGrade;
 
       if (cin.fail()) {
@@ -33,8 +37,7 @@ int main() {
 
   float gradeAverage = studentGradesTotal / GRADES_TO_READ;
 
-  cout << "El promedio del estudiante " << studentName << " es de "
-       << gradeAverage << "\n";
+  cout << "El promedio de " << studentName << " es de " << gradeAverage << "\n";
 
   return 0;
 }
