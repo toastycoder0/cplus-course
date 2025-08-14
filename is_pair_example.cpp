@@ -3,23 +3,23 @@
 using namespace std;
 
 int main() {
-    int number;
+  int number;
 
-    while (true) {
-        cout << "Ingresa el número a evaluar: ";
-        cin >> number;
+  while (true) {
+    cout << "Ingresa el número a evaluar: ";
+    cin >> number;
 
-        if (cin.fail() || number < 1) {
-            cout << "Entrada incorrecta. Intenta de nuevo.\n";
-            cin.clear();
-            cin.ignore(10000, '\n');
-            continue;
-        }
-
-        break;
+    if (cin.fail() || number < 1) {
+      cout << "Entrada incorrecta. Intenta de nuevo.\n";
+      cin.clear();
+      cin.ignore(10000, '\n');
+      continue;
     }
 
-    cout << "El número " << (number % 2 == 0 ? "par" : "impar") << "\n";
+    break;
+  }
 
-    return 0;
+  cout << "El número " << (number % 2 == 0 ? "par" : "impar") << "\n";
+
+  return 0;
 }
